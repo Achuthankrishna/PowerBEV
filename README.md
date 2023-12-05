@@ -1,7 +1,6 @@
-# PowerBEV
-This is the official PyTorch implementation of the paper: 
-> [**PowerBEV: A Powerful yet Lightweight Framework for Instance Prediction in Bird's-Eye View**](https://www.ijcai.org/proceedings/2023/0120.pdf)  
-> [Peizheng Li](https://edwardleelpz.github.io/), [Shuxiao Ding](https://scholar.google.com/citations?user=QPLytlUAAAAJ&hl=en&oi=ao), [Xieyuanli Chen](https://xieyuanli-chen.com/), [Niklas Hanselmann](https://lasnik.github.io/), [Marius Cordts](https://scholar.google.com/citations?user=RM0ik8wAAAAJ&hl=en&oi=ao), [Jürgen Gall](https://scholar.google.com/citations?user=1CLaPMEAAAAJ&hl=en&oi=ao)
+# PowerBEV - Woven Dataset
+
+
 
 ![](.github/demo.jpg)
 
@@ -107,6 +106,11 @@ Note: To visualize Ground Truth, please add the config `VISUALIZATION.VIS_GT Tru
 
 ## 📜 License
 PowerBEV is released under the MIT license. Please see the [LICENSE](LICENSE) file for more information.
+
+## Credits
+This is the official PyTorch implementation of the paper: 
+> [**PowerBEV: A Powerful yet Lightweight Framework for Instance Prediction in Bird's-Eye View**](https://www.ijcai.org/proceedings/2023/0120.pdf)  
+> Peizheng Li, Shuxiao Ding,Xieyuanli Chen,Niklas Hanselmann,Marius Cordts,Jürgen Gall
 
 ## 🔗 Citation
 ```
