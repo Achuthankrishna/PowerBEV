@@ -2,25 +2,19 @@
 
 
 
-![](.github/demo.jpg)
+![](.github/PowerBev2.jpg)
 
 ## 📃 Contents
-- [PowerBEV](#powerbev)
-  - [📃 Contents](#-contents)
-  - [📰 News](#-news)
-  - [⚙️ Setup](#️-setup)
-  - [📁 Dataset](#-dataset)
-  - [🔥 Pre-trained models](#-pre-trained-models)
-  - [🏊 Training](#-training)
-  - [🏄 Prediction](#-prediction)
+- [PowerBEV2](#powerbev)
+  - [Setup](#️-setup)
+  - [Dataset](#-dataset)
+  - [Pre-trained models](#-pre-trained-models)
+  - [Training](#-training)
+  - [Prediction](#-prediction)
     - [Evaluation](#evaluation)
     - [Visualisation](#visualisation)
-  - [📜 License](#-license)
-  - [🔗 Citation](#-citation)
-
-## 📰 News
-- PowerBEV has been accepted by [the 32nd International Joint Conference on Artificial Intelligence](https://ijcai-23.org/).
-- PowerBEV has been included in [ROAD++: The Second Workshop & Challenge on Event Detection for Situation Awareness in Autonomous Driving](https://sites.google.com/view/road-plus-plus/home) @ [ICCV 2023](https://iccv2023.thecvf.com/).
+  - [Credits](#-license)
+  - [Citation](#-citation)
 
 ## ⚙️ Setup
 Create the [conda](https://docs.conda.io/en/latest/miniconda.html) environment by running 
@@ -29,20 +23,15 @@ conda env create -f environment.yml
 ```
 
 ## 📁 Dataset
-- Download the full [*NuScenes dataset (v1.0)*](https://www.nuscenes.org/download), which includes the *Mini dataset* (metadata and sensor file blobs) and the *Trainval dataset* (metadata and file blobs part 1-10).
-- Extract the tar files to the default `nuscenes/` or to `YOUR_NUSCENES_DATAROOT`. The files should be organized in the following structure:
+- Download the full [*Toyota Woven Planet Perception datset*](https://woven.toyota/en/perception-dataset/), which includes the *Mini dataset* and the *Train and Test dataset*.
+- Extract the tar files to a directory named `lyft2/` . The files should be organized in the following structure:
   ```
-  nuscenes/
-  ├──── trainval/
+  lyft2/
+  ├──── train/
   │     ├──── maps/
-  │     ├──── samples/
-  │     ├──── sweeps/
-  │     └──── v1.0-trainval/
-  └──── mini/
-        ├──── maps/
-        ├──── samples/
-        ├──── sweeps/
-        └──── v1.0-mini/
+  │     ├──── images/
+  │     ├──── train_lidar/
+  │     └──── train_data/
   ```
 
 ## 🔥 Pre-trained models
