@@ -1,10 +1,12 @@
 # PowerBEV - Woven Dataset
+* Contributors : Aman Sharma , Vyshnav Achuthan , Neha Madhekar , Rishikesh Jadhav , Wu Xiyang 
 
 
 
 ![](.github/PowerBev2.jpg)
 
-## 📃 Contents
+
+## Contents
 - [PowerBEV2](#powerbev)
   - [Setup](#️-setup)
   - [Dataset](#-dataset)
@@ -13,7 +15,7 @@
   - [Prediction](#-prediction)
     - [Evaluation](#evaluation)
     - [Visualisation](#visualisation)
-  - [Credits](#-license)
+  - [Credits](#-credits)
   - [Citation](#-citation)
 
 ## Setup
@@ -82,34 +84,10 @@ python visualise.py --config powerbev/configs/powerbev.yml \
 ```
 This will render predictions from the network and save them to an `visualization_outputs` folder.
 
-## 📜 License
+## License
 PowerBEV is released under the MIT license. Please see the [LICENSE](LICENSE) file for more information.
 
 ## Credits
 This is the official PyTorch implementation of the paper: 
 > [**PowerBEV: A Powerful yet Lightweight Framework for Instance Prediction in Bird's-Eye View**](https://www.ijcai.org/proceedings/2023/0120.pdf)  
 > Peizheng Li, Shuxiao Ding,Xieyuanli Chen,Niklas Hanselmann,Marius Cordts,Jürgen Gall
-
-## 🔗 Citation
-```
-@article{li2023powerbev,
-  title     = {PowerBEV: A Powerful Yet Lightweight Framework for Instance Prediction in Bird's-Eye View},
-  author    = {Li, Peizheng and Ding, Shuxiao and Chen, Xieyuanli and Hanselmann, Niklas and Cordts, Marius and Gall, Juergen},
-  journal   = {arXiv preprint arXiv:2306.10761},
-  year      = {2023}
-}
-@inproceedings{ijcai2023p120,
-  title     = {PowerBEV: A Powerful Yet Lightweight Framework for Instance Prediction in Bird’s-Eye View},
-  author    = {Li, Peizheng and Ding, Shuxiao and Chen, Xieyuanli and Hanselmann, Niklas and Cordts, Marius and Gall, Juergen},
-  booktitle = {Proceedings of the Thirty-Second International Joint Conference on
-               Artificial Intelligence, {IJCAI-23}},
-  publisher = {International Joint Conferences on Artificial Intelligence Organization},
-  editor    = {Edith Elkind},
-  pages     = {1080--1088},
-  year      = {2023},
-  month     = {8},
-  note      = {Main Track},
-  doi       = {10.24963/ijcai.2023/120},
-  url       = {https://doi.org/10.24963/ijcai.2023/120},
-}
-```
