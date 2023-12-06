@@ -41,17 +41,17 @@ The config file can be found in [`powerbev/configs`](powerbev/configs) . You can
 |-|-|-|:-:|:-:|
 |[`PowerBEV_long.ckpt`](https://drive.google.com/file/d/1P33nD6nt8IjnvKTd4WlTKWbarFdCE34f/view?usp=sharing) | NuScenes| 100m x 100m (50cm res.) | 39.3 | 33.8 |
 | [`PowerBEV_short.ckpt`](https://drive.google.com/file/d/1-T4R6vC2HHhqxXeUeUg-CuViA5XdQEcV/view?usp=sharing) | NuScenes| 30m x 30m (15cm res.) | 62.5 | 55.5 |  
-| [`PowerBEV_short.ckpt`]((https://drive.google.com/file/d/16bnG3kI_J3JkFGGxMuQfz879QFz7SVhj/view?usp=sharing))| None | 100m x 100m (50cm res.) | 39.3 | 33.8 |
+| [`PowerBEV_static_long.ckpt`]((https://drive.google.com/file/d/16bnG3kI_J3JkFGGxMuQfz879QFz7SVhj/view?usp=sharing))| None | 100m x 100m (50cm res.) | 39.3 | 33.8 |
 | [`PowerBEV_static_short.ckpt`](https://drive.google.com/file/d/1Jwb2UjNEuamwNmBZ_R-DAW91dhxi4_6J/view?usp=sharing)| None | 30m x 30m (15cm res.) | 62.5 | 55.5 |  
 
-## 🏊 Training
-To train the model from scratch on NuScenes, run
+## Training
+To train the model from scratch on Woven, run
 
 ```
 python train.py --config powerbev/configs/powerbev.yml
 ```
-
-To train the model from the pre-trained static checkpoint on NuScenes, download pre-trained static weights ([`static long`](https://drive.google.com/file/d/16bnG3kI_J3JkFGGxMuQfz879QFz7SVhj/view?usp=sharing)/[`static short`](https://drive.google.com/file/d/1Jwb2UjNEuamwNmBZ_R-DAW91dhxi4_6J/view?usp=sharing)) to `YOUR_PRETRAINED_STATIC_WEIGHTS_PATH` and run
+and make sure you make the respective changes on the config.yaml file inside configs folder.
+### For running on pretrained weights
 
 ```
 python train.py --config powerbev/configs/powerbev.yml \
@@ -59,23 +59,12 @@ python train.py --config powerbev/configs/powerbev.yml \
                 PRETRAINED.PATH $YOUR_PRETRAINED_STATIC_WEIGHTS_PATH
 ```
 
-Note: These will train the model on 4 GPUs, each with a batch of size 2. 
 
-To set your configs, please run
-
-```
-python train.py --config powerbev/configs/powerbev.yml \
-                DATASET.DATAROOT $YOUR_NUSCENES_DATAROOT \
-                LOG_DIR $YOUR_OUTPUT_PATH \
-                GPUS [0] \
-                BATCHSIZE $YOUR_DESIRED_BATCHSIZE
-```
-
-The above settings can also be changed directly by modifying [`powerbev.yml`](powerbev/configs/powerbev.yml). Please see the [`config.py`](powerbev/config.py) for more information.  
-
-## 🏄 Prediction
+## Prediction
 ### Evaluation
-Download trained weights ([`long`](https://drive.google.com/file/d/1P33nD6nt8IjnvKTd4WlTKWbarFdCE34f/view?usp=sharing)/[`short`](https://drive.google.com/file/d/1-T4R6vC2HHhqxXeUeUg-CuViA5XdQEcV/view?usp=sharing)) to `YOUR_PRETRAINED_WEIGHTS_PATH` and run
+To run from the model which was trained from scratch just search for the tensorboard log file which will have the ckpt file and add that ckpt
+file path as your pretrained weights path.
+
 ```
 python test.py --config powerbev/configs/powerbev.yml \
                 PRETRAINED.LOAD_WEIGHTS True \
@@ -83,7 +72,8 @@ python test.py --config powerbev/configs/powerbev.yml \
 ```
 
 ### Visualisation
-Download trained weights ([`long`](https://drive.google.com/file/d/1P33nD6nt8IjnvKTd4WlTKWbarFdCE34f/view?usp=sharing)/[`short`](https://drive.google.com/file/d/1-T4R6vC2HHhqxXeUeUg-CuViA5XdQEcV/view?usp=sharing)) to `YOUR_PRETRAINED_WEIGHTS_PATH` and run
+To run from the model which was trained from scratch just search for the tensorboard log file which will have the ckpt file and add that ckpt
+file path as your pretrained weights path.
 ```
 python visualise.py --config powerbev/configs/powerbev.yml \
                 PRETRAINED.LOAD_WEIGHTS True \
@@ -91,7 +81,6 @@ python visualise.py --config powerbev/configs/powerbev.yml \
                 BATCHSIZE 1
 ```
 This will render predictions from the network and save them to an `visualization_outputs` folder.
-Note: To visualize Ground Truth, please add the config `VISUALIZATION.VIS_GT True` at the end of the command
 
 ## 📜 License
 PowerBEV is released under the MIT license. Please see the [LICENSE](LICENSE) file for more information.
